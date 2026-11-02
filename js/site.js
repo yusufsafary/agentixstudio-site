@@ -25,12 +25,12 @@
   // (a Finished piece), except Noctis, whose sample is the 1976 Masterwork.
   const sampleSeed = (i) => (i === 1 ? 1976 : i * 1000 + 710);
 
-  // ---------- studio clock (WIB) ----------
+  // ---------- studio clock (UTC) ----------
   (function clock() {
     const el = $('#studioClock');
     if (!el) return;
     function tick() {
-      const now = new Date(Date.now() + 7 * 3600 * 1000);
+      const now = new Date();
       const p = (n) => String(n).padStart(2, '0');
       el.textContent = p(now.getUTCHours()) + ':' + p(now.getUTCMinutes()) + ':' + p(now.getUTCSeconds());
     }

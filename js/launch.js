@@ -1,4 +1,4 @@
-// Agentix Studio launch clock. Clock-in opens 2 Nov 2026 at 04.30 UTC (11.30 WIB).
+// Agentix Studio launch clock. Clock-in opens 2 Nov 2026 at 04.30 UTC.
 var LAUNCH_AT = Date.UTC(2026, 10, 2, 4, 30, 0);
 function fmtCd(ms) {
   var s = Math.max(0, Math.floor(ms / 1000));
