@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Archive · Agentix Studio</title>
+<meta name="description" content="Agentix Studio archive: every worked shift, its agent, its finish and its owner, read live from BNB Chain.">
+<meta name="theme-color" content="#0C0A18">
+<meta property="og:title" content="Agentix Studio Archive">
+<meta property="og:description" content="Every worked shift, its agent and its holder.">
+<meta property="og:image" content="https://agentixstudio.pro/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+.mk-head{padding:64px 20px 28px;max-width:1080px;margin:0 auto}
+.mk-head h1{font-size:clamp(44px,11vw,92px);margin:14px 0 18px}
+.mk-head p{max-width:620px;color:var(--mute)}
+.mk-stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:26px}
+.mk-stats div b{display:block;font-family:var(--disp);font-weight:800;font-size:34px;color:var(--ink)}
+.mk-tools{position:sticky;top:46px;z-index:10;background:rgba(12,10,24,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.mk-tools .in{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.mk-tools select{flex:1 1 30%;min-width:0}.mk-tools select,.mk-tools input{height:44px;border:1px solid var(--ink);background:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.06em;padding:0 12px;color:var(--ink);border-radius:0}
+.mk-tools input{flex:1 1 100%;min-width:0;font-size:16px}@media(min-width:760px){.mk-tools input{flex:1 1 220px;font-size:12px}.mk-tools select{flex:0 0 auto}}
+.mk-grid{max-width:1080px;margin:0 auto;padding:18px 14px 60px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:760px){.mk-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px;padding:24px 20px 80px}}
+.mk-card{background:var(--paper);border:1px solid var(--rule);display:flex;flex-direction:column}
+.mk-card .art{aspect-ratio:1;background:#000;overflow:hidden}
+.mk-card .art img{width:100%;height:100%;display:block;object-fit:cover}
+.mk-card .meta{padding:10px 10px 2px}
+.mk-card .meta h3{font-family:var(--mono);font-weight:500;font-size:16px;letter-spacing:.04em}
+.mk-card .meta p{color:var(--mute);margin-top:4px}
+.mk-card .acts{display:grid;grid-template-columns:1fr;gap:8px;padding:12px 14px 14px;margin-top:auto}
+.mk-card .acts .btn{height:40px;padding:0 8px;font-size:10.5px}
+@media(min-width:760px){.mk-card .meta{padding:14px 14px 4px}.mk-card .meta h3{font-size:18px}.mk-card .acts{grid-template-columns:1fr 1fr}}
+.mk-empty{grid-column:1/-1;padding:60px 0;text-align:center;color:var(--mute)}
+.mk-note{max-width:1080px;margin:0 auto;padding:0 20px 60px;color:var(--mute);font-size:15px}
+</style>
+</head>
+<body>
+<header class="rosterbar">
+  <a class="back" href="/">← AGENTIX</a>
+  <span class="mono">Archive · Night output</span>
+  <span class="count mono"><b id="barCount">0</b>/12,000</span>
+</header>
+<nav class="nav mono solo"><a href="/#floor-sec">Studio Floor</a><a href="/#clockin">Clock In</a><a href="/#claim">Payroll</a><a href="/market" aria-current="page">Archive</a></nav>
+
+<section class="mk-head">
+  <span class="mono" style="color:var(--acc)">Shift 06 · Exchange</span>
+  <h1 class="display">Archive.<br><em class="outline">Every shift, every holder.</em></h1>
+  <p>Every Agentix Studio work clocked in so far, read live from BNB Chain with its agent, its finish and its holder. Trading runs through Element on BNB Chain once the collection is indexed there.</p>
+  <div class="shiftmeta mono">
+    <div><span>Studio</span><b>AGENTIX</b></div>
+    <div><span>Output</span><b>12,000 shifts</b></div>
+    <div><span>Mode</span><b>Agent clock-in only</b></div>
+    <div><span>Source</span><b>Live from BNB Chain</b></div>
+  </div>
+  <div class="mk-stats mono">
+    <div><b id="sMinted">…</b>Worked</div>
+    <div><b id="sOwners">…</b>Holders</div>
+    <div><b>12,000</b>Max supply</div>
+  </div>
+  <div class="cta" style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap">
+    <a class="btn line" href="https://bscscan.com/token/0x2b29c619F23C9B7CE04c8B80fc82b9a99e6dB3FC" target="_blank" rel="noopener">Contract on BscScan</a>
+  </div>
+</section>
+
+<div class="mk-tools"><div class="in">
+  <input id="q" placeholder="Search # or paste a wallet 0x…" autocomplete="off" spellcheck="false" aria-label="Search by id or wallet">
+  <select id="fCls" aria-label="Finish"><option value="">All finishes</option><option value="2">Masterwork</option><option value="1">Finished</option><option value="0">Draft</option></select>
+  <select id="fPal" aria-label="Palette"><option value="">All palettes</option></select>
+  <select id="fAgent" aria-label="Agent"><option value="">All agents</option></select>
+  <select id="sort" aria-label="Sort"><option value="new">Newest</option><option value="old">Oldest</option></select>
+</div></div>
+
+<main class="mk-grid" id="grid"><div class="mk-empty mono">Reading BNB Chain…</div></main>
+<p class="mk-note">Agentix Studio is a standard ERC-721 on BNB Chain. Contract: <span class="mono">0x2b29c619F23C9B7CE04c8B80fc82b9a99e6dB3FC</span></p>
+
+<script src="/js/art.js"></script>
+<script src="/js/chain.js"></script>
+<script>
+const $ = (s) => document.querySelector(s);
+let ALL = [];
+const short = (a) => a.slice(0, 6) + '…' + a.slice(-4);
+function opts(sel, vals) { [...new Set(vals)].sort().forEach((v) => { const o = document.createElement('option'); o.value = o.textContent = v; sel.appendChild(o); }); }
+function render() {
+  const q = $('#q').value.trim().toLowerCase(), f = $('#fCls').value, p = $('#fPal').value, ag = $('#fAgent').value;
+  let list = ALL.filter((x) => (f === '' || x.cls === Number(f)) && (!p || x.palette === p) && (!ag || x.agent === ag));
+  if (q) list = /^0x[0-9a-f]{40}$/.test(q) ? list.filter((x) => x.owner.toLowerCase() === q) : list.filter((x) => String(x.id) === q.replace('#', '') || x.clsName.toLowerCase().includes(q) || x.agent.toLowerCase().includes(q));
+  list.sort((a, b) => $('#sort').value === 'old' ? a.id - b.id : b.id - a.id);
+  const g = $('#grid'); g.innerHTML = '';
+  if (!list.length) { g.innerHTML = '<div class="mk-empty mono">No shifts match.</div>'; return; }
+  for (const x of list) {
+    const d = document.createElement('article'); d.className = 'mk-card rv';
+    d.innerHTML = `<a class="art" href="https://bscscan.com/token/0x2b29c619F23C9B7CE04c8B80fc82b9a99e6dB3FC?a=${x.id}" target="_blank" rel="noopener"><img loading="lazy" src="${x.img}" alt="Agentix Studio #${x.id}"></a>
+      <div class="meta"><h3>AGENTIX #${x.id}</h3><p class="mono">${x.clsName} · ${x.palette} · Shift ${x.shift}</p><p class="mono">Agent ${x.agent} · ${x.role}</p><p class="mono">Holder <a href="https://bscscan.com/address/${x.owner}" target="_blank" rel="noopener">${short(x.owner)}</a></p></div>
+      <div class="acts"><a class="btn line" href="${x.element}" target="_blank" rel="noopener">Element</a><a class="btn ink" href="https://bscscan.com/token/0x2b29c619F23C9B7CE04c8B80fc82b9a99e6dB3FC?a=${x.id}" target="_blank" rel="noopener">Inspect</a></div>`;
+    g.appendChild(d);
+  }
+}
+window.AgentixChain.market().then((j) => {
+  ALL = j.items || []; $('#sMinted').textContent = j.minted.toLocaleString('en'); $('#sOwners').textContent = j.owners.toLocaleString('en'); $('#barCount').textContent = j.minted;
+  opts($('#fPal'), ALL.map((x) => x.palette)); opts($('#fAgent'), ALL.map((x) => x.agent)); render();
+  if (window.AgentixSmooth) window.AgentixSmooth();
+}).catch(() => { $('#grid').innerHTML = '<div class="mk-empty mono">Could not reach BNB Chain. Refresh in a moment.</div>'; });
+['#q', '#fCls', '#fPal', '#fAgent', '#sort'].forEach((s) => $(s).addEventListener('input', render));
+</script>
+<script src="/js/smooth.js" defer></script>
+</body>
+</html>

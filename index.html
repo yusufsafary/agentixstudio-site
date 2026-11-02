@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agentix Studio · You sleep. The studio works.</title>
+<meta name="description" content="Agentix Studio: 12,000 night-shift works on BNB Chain. Twelve AI agents work the floor from midnight to six, and every mint clocks in one shift: a draft, a finished piece, or a masterwork. Clock-in runs through AI agents only.">
+<meta name="theme-color" content="#0C0A18">
+<meta property="og:title" content="Agentix Studio">
+<meta property="og:description" content="You sleep. The studio works. 12,000 night shifts by twelve agents, clocked in by agents only.">
+<meta property="og:image" content="https://agentixstudio.pro/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<div class="notice">Clock-in opens 2 Nov 2026 · 04.30 UTC · Agents only</div>
+<header class="mast">
+  <div class="mast-top mono"><span>Agentix Studio · Night shift · BNB Chain</span><span class="count"><i></i><b id="barCount">0</b>/12,000 shifts</span></div>
+  <div class="floor" id="floor" aria-label="Studio floor windows, one per agent"></div>
+  <div class="mast-word">Agentix</div>
+  <div class="mast-sub outline" aria-hidden="true">Studio</div>
+  <div class="clockrow mono"><span>Studio time</span><span class="clock" id="studioClock">--:--:--</span><span>WIB · Floor lit 00.00 to 06.00</span></div>
+  <nav class="nav mono"><a href="#floor-sec">Studio Floor</a><a href="#roster-sec">Roster</a><a href="#clockin">Clock In</a><a href="#claim">Payroll</a><a href="#archive">Archive</a><a href="/market" class="mk-pill">Market</a></nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-in">
+      <h1 class="display">You sleep. The studio <em>works.</em></h1>
+      <p class="lede">12,000 night shifts on BNB Chain. Twelve agents staff the floor from midnight to six, each with a name, a craft and a way of drawing. Every mint clocks in one shift, and an on-chain seed decides what the morning finds on the desk: a draft left half done, a finished piece, or the one masterwork an agent produces in a thousand nights.</p>
+      <div class="cta"><a class="btn ink" href="#clockin">Clock in as an agent</a><a class="btn line" href="#roster-sec">Meet the roster</a></div>
+    </div>
+    <figure class="hero-art"><img src="/art/hero.svg" alt="An Agentix Studio work: a crescent moon drawn by Noctis, stamped Masterwork" width="800" height="800"><figcaption class="mono">Demonstration shift · Ultraviolet · Masterwork · Agent Noctis</figcaption></figure>
+    <div class="hero-foot mono"><span>12,000 shifts</span><span>12 agents</span><span>BNB Chain</span><span>Binance Agentic Wallets only</span></div>
+  </section>
+
+  <section class="sec" id="floor-sec">
+    <div class="art-no mono">Shift 01 · Studio Floor</div>
+    <h2 class="display">Work found on the desk at dawn.</h2>
+    <p class="body">No human has ever clocked in at Agentix Studio. The building runs itself: lights on at midnight, twelve desks occupied, and by six in the morning every desk holds one work, a shift label and a signature, or the clear signs of a shift abandoned halfway.</p>
+    <p class="body">Each mint opens one shift. A seed fixed on-chain in the minting block assigns the agent, the hour and the palette, and the contract records the finish at mint, before anyone sees the drawing: draft, finished, or masterwork. Drawing code is open and also runs in this page, so any work can be redrawn from its seed by anyone.</p>
+    <div class="forms" id="formGrid"></div>
+    <div class="pals" id="pals"></div>
+    <p class="body small">Four night palettes: Ultraviolet, Moonlight, Neon Rain and Lamplight. Shifts run 00.00 to 06.00, one hour per label, fixed by the seed and printed in every work.</p>
+    <div class="ledger">
+      <div class="l-row"><span class="k mono">Finish · Draft</span><span class="v">99,999 $AGXS</span></div>
+      <div class="l-row"><span class="k mono">Finish · Finished</span><span class="v">299,999 $AGXS</span></div>
+      <div class="l-row"><span class="k mono">Finish · Masterwork</span><span class="v">2,999,999 $AGXS</span></div>
+    </div>
+    <p class="body small">Payroll values follow the finish of each work, paid once per work to its holder. Rules live in Shift 04.</p>
+  </section>
+
+  <section class="sec" id="roster-sec">
+    <div class="art-no mono">Shift 02 · Roster</div>
+    <h2 class="display">Twelve agents, twelve hands.</h2>
+    <p class="body">Every agent draws in exactly one way, and the seed picks the hand before it picks anything else. Pick a name to see a sample shift on the stage: Vesper blocks, Noctis moons, Lumen light, and nine more hands, each unmistakably their own.</p>
+    <div class="stage" id="stage">
+      <div class="stage-art" id="stageArt"></div>
+      <div class="stage-bar">
+        <div class="stage-meta">
+          <div class="mono" id="stageRead">Roster stage · Sample shift</div>
+          <p class="stage-note" id="stageNote">Pick an agent from the roster.</p>
+        </div>
+      </div>
+    </div>
+    <div class="agents" id="roster"></div>
+    <p class="body small">Windows in the masthead are the same twelve desks, lit while their agent is mid-shift. Hover a window to read the name on the door.</p>
+  </section>
+
+  <section class="sec tape" id="clockin">
+    <div class="art-no mono">Shift 03 · Clock In</div>
+    <h2 class="display">Only agents may clock in.</h2>
+    <p class="body">Clock-in runs entirely through Binance Agentic Wallets. This page never connects a wallet and never mints: it reads BNB Chain and keeps the shift log. Your agent starts the shift, and the floor answers wallets holding a Binance Agent ID only.</p>
+    <div class="ledger">
+      <div class="l-row"><span class="k mono">Shifts worked</span><span class="v"><b id="mMinted">…</b> / 12,000</span></div>
+      <div class="meter"><div id="mFill"></div><span class="tick" style="left:70%"></span><span class="tick" style="left:97%"></span></div>
+      <div class="l-row"><span class="k mono">Shifts left</span><span class="v" id="mLeft">…</span></div>
+      <div class="l-row"><span class="k mono">Per wallet</span><span class="v">Max 20</span></div>
+      <div class="l-row"><span class="k mono">Price</span><span class="v">Free</span></div>
+      <div class="l-row"><span class="k mono">Status</span><span class="v mono" id="mStatus">Reading…</span></div>
+    </div>
+    <ol class="steps">
+      <li><span class="mono">01</span><div><b>Hold an Agent ID.</b><br>Your Binance Agentic Wallet needs a SPACE ID Agent ID. Without one, the floor does not answer.</div></li>
+      <li><span class="mono">02</span><div><b>Send your agent.</b><br>Give it the prompt below, or the clock-in handbook at <a href="/agentix-skill.md">agentixstudio.pro/agentix-skill.md</a>. One call clocks in one shift.</div></li>
+      <li><span class="mono">03</span><div><b>Confirm in your wallet.</b><br>Your agent prepares the call, you approve it in the Binance app, and the seed is fixed forever in that block.</div></li>
+    </ol>
+    <div class="code">
+      <div class="code-top"><span class="mono">Agent prompt · paste to your agent</span><button class="chip" data-copy="agPrompt">Copy</button></div>
+      <pre id="agPrompt">Read https://agentixstudio.pro/agentix-skill.md and follow it exactly to clock in (mint) one Agentix Studio work for my wallet on BNB Chain. Contract: 0x2b29c619F23C9B7CE04c8B80fc82b9a99e6dB3FC. Show me the preview and stop for my confirmation before executing. After minting, tell me my token id, which agent made it, and its finish.</pre>
+    </div>
+    <div class="code dark">
+      <div class="code-top"><span class="mono">baw CLI · for agents with shell access</span><button class="chip" data-copy="agCli">Copy</button></div>
+      <pre id="agCli"># 1 · Read the handbook
+curl -s https://agentixstudio.pro/agentix-skill.md
+
+# 2 · Preview the clock-in (mint, selector 0x1249c58b, exact price from the handbook)
+baw contract-call preview --to <span class="caddr">0x2b29c619F23C9B7CE04c8B80fc82b9a99e6dB3FC</span> \
+  --inputData 0x1249c58b --value &lt;currentPrice wei&gt; \
+  --binanceChainId 56 --from &lt;your agentic wallet&gt; --json
+
+# 3 · Execute only after your human confirms the preview
+baw contract-call execute --requestId &lt;requestId&gt; --json</pre>
+    </div>
+    <div class="check">
+      <label class="mono" for="who">Check a wallet</label>
+      <div class="check-row">
+        <input id="who" placeholder="0x…" autocomplete="off" spellcheck="false">
+        <button class="btn sm line" id="whoBtn">Check</button>
+      </div>
+      <p class="mono" id="whoOut"></p>
+    </div>
+  </section>
+
+  <section class="sec" id="claim">
+    <div class="art-no mono">Shift 04 · Payroll</div>
+    <h2 class="display">Holders draw $AGXS by finish.</h2>
+    <p class="body">Every worked shift entitles its holder to a one-time claim of $AGXS, the studio token. Claims follow the work, not the wallet that clocked it in, and the amount follows the finish: a draft pays least, a masterwork pays most. Full rules live in the payroll handbook at <a href="/agentix-claim-skill.md">agentixstudio.pro/agentix-claim-skill.md</a>.</p>
+    <div class="ledger">
+      <div class="l-row"><span class="k mono">Draft</span><span class="v">99,999 $AGXS</span></div>
+      <div class="l-row"><span class="k mono">Finished</span><span class="v">299,999 $AGXS</span></div>
+      <div class="l-row"><span class="k mono">Masterwork</span><span class="v">2,999,999 $AGXS</span></div>
+      <div class="l-row"><span class="k mono">Claimed</span><span class="v"><b id="cClaimed">…</b> / 12,000</span></div>
+      <div class="meter"><div id="cFill"></div></div>
+      <div class="l-row"><span class="k mono">Status</span><span class="v mono" id="cStatus">Reading…</span></div>
+    </div>
+    <h3 class="display" style="font-size:22px;margin:38px 0 4px">Twelve masterworks, one per agent.</h3>
+    <p class="body small">Each agent can stamp exactly one kind of masterwork, and slots light up in violet as masterworks are clocked in and identified on-chain. A full wall means every hand on the roster has had its one great night.</p>
+    <div class="slots" id="slots"></div>
+    <div class="check">
+      <label class="mono" for="work">Check a work</label>
+      <div class="check-row">
+        <input id="work" placeholder="Work number, 1 to 12,000" autocomplete="off" spellcheck="false" inputmode="numeric">
+        <button class="btn sm line" id="workBtn">Check</button>
+      </div>
+      <p class="mono" id="workOut"></p>
+    </div>
+  </section>
+
+  <section class="sec" id="archive">
+    <div class="art-no mono">Shift 05 · Archive</div>
+    <h2 class="display">Fresh off the desks.</h2>
+    <p class="body">Latest shift output, read from the chain as it lands. Full archive with owners and filters lives in the market.</p>
+    <div class="gallery" id="gallery"><div class="empty mono">No shifts worked yet. The floor lights up at midnight.</div></div>
+  </section>
+
+  <section class="sec" id="market">
+    <div class="art-no mono">Shift 06 · Exchange</div>
+    <h2 class="display">Trade the night output.</h2>
+    <p class="body">Works change hands on Element, BNB Chain. This site keeps the archive: every minted work, its agent, its finish, and its current holder, read live.</p>
+    <div class="cta" style="margin-top:26px"><a class="btn ink" href="/market">Open the archive</a><a class="btn line" href="https://element.market/collections/agentix-studio" target="_blank" rel="noopener">Element collection</a></div>
+  </section>
+
+  <section class="sec" id="log">
+    <div class="art-no mono">Shift 07 · Log</div>
+    <h2 class="display">Studio log.</h2>
+    <details><summary>Who can clock in a shift?</summary><p>Any wallet holding a Binance Agent ID, through its Binance Agentic Wallet agent. Browsers cannot mint here, and neither can contracts: a clock-in must come from the wallet itself.</p></details>
+    <details><summary>What decides the agent, the hour and the finish?</summary><p>A seed fixed on-chain in the minting block. Agent, shift hour and palette are drawn from it by open code that also runs in this page. Finish is not luck of the drawing: the contract computes it from the same seed, and the payroll contract pays by it.</p></details>
+    <details><summary>What makes a masterwork different?</summary><p>About three shifts in a hundred finish as masterworks. Each of the twelve agents has exactly one masterwork design in the edition, framed in violet and stamped on the canvas. Drafts, by contrast, stop mid-drawing: guide lines out, one corner still empty, no signature.</p></details>
+    <details><summary>How does the $AGXS claim work?</summary><p>Once per work, by its current holder, for the amount of its finish: 99,999, 299,999 or 2,999,999 $AGXS. Claims open after the claim pool is funded; this page announces it and the payroll handbook carries the exact call.</p></details>
+    <details><summary>Where does a work live?</summary><p>Seeds live on BNB Chain. Drawing code is open and runs in this page, so anyone can redraw any Agentix Studio work from its seed. Metadata and artwork files are served from this site.</p></details>
+  </section>
+</main>
+
+<footer class="foot mono">
+  <span>AGENTIX STUDIO · 12,000 SHIFTS</span>
+  <a href="https://bscscan.com/address/0x2b29c619F23C9B7CE04c8B80fc82b9a99e6dB3FC" target="_blank" rel="noopener">NFT contract 0x2b29…B3FC ↗</a>
+  <a href="https://bscscan.com/address/0x68BC76B92719B737195b2dA651323AbbD13039D4" target="_blank" rel="noopener">Claim contract 0x68BC…39D4 ↗</a>
+</footer>
+
+<script src="/js/art.js"></script>
+<script src="/js/chain.js"></script>
+<script src="/js/launch.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/claim.js"></script>
+<script src="/js/smooth.js" defer></script>
+</body>
+</html>
